@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@100&family=Roboto&family=Source+Sans+Pro:wght@300&display=swap');
+
+:root {
+    --font-light-color: #ffffff;
+    --font-dark-color: #000000;
+    --primary-color: #e07a5f;
+    --secondary-color: #3d405b;
+    --tertiary-color: #81b29a;
+    --bg-color: #fbf9f2;
+    --bg-color-2: #f4f1de;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* white: {
+    100: "#fdfcf8",
+    200: "#fbf9f2",
+    300: "#f8f7eb",
+    400: "#f6f4e5",
+    500: "#f4f1de",
+    600: "#c3c1b2",
+    700: "#929185",
+    800: "#626059",
+    900: "#31302c"
+}, */
