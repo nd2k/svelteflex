@@ -1,18 +1,6 @@
 import { writable } from "svelte/store";
 
-/**
- * Color object
- * @typedef {Object} Color
- * @property {string} label
- * @property {string} value
- */
 
-/**
- * Theme object
- * @typedef {Object} Theme
- * @property {string} projectName
- * @property {Array<Color>} selectedColors
- */
 
 
 export const theme = writable({

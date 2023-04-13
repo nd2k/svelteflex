@@ -1,14 +1,32 @@
 <script>
     export let size = "0";
     export let borderRadius = "0";
+    export let isRound = false;
     export let onClick = () => console.log("test");
-    const style = `
-        width: ${size}rem; 
-        border-radius: ${borderRadius}   
-    `;
+
+    /**
+     * Compute style for Button component
+     * @param {HTMLButtonElement} node
+     */
+    function computeStyle(node) {
+        let style = "";
+        if (isRound) {
+            style = `width: ${size}rem; height: ${size}rem;`;
+        } else {
+            style = `width: ${size}rem; `;
+        }
+        style += `border-radius: ${borderRadius} `;
+        // @ts-ignore
+        node.style = style;
+    }
 </script>
 
-<button {style} on:click={onClick}>
+<button 
+    type="button"
+    on:click={onClick}
+    style:width={`${size}rem`}
+    style:height={isRound ? `${size}rem` : `2rem`}
+    style:border-radius={borderRadius}>
     <slot />
 </button>
 

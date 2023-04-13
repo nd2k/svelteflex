@@ -34,3 +34,39 @@ export class Color {
         this.value = value;
     }
 }
+
+/**
+ * Enum flex align
+ * @readonly
+ * @enum {string}
+ */
+export const alignFlexMap = {
+    START: 'flex-start',
+    CENTER: 'center',
+    END: 'flex-end',
+    STRETCH: 'stretch',
+  };
+  
+  /**
+   * Enum flex justify
+   * @readonly
+   * @enum {string}
+   */
+  export const justifyFlexMap = {
+    START: 'flex-start',
+    CENTER: 'center',
+    END: 'flex-end',
+    AROUND: 'space-around',
+    BETWEEN: 'space-between',
+    EVENLY: 'space-evenly',
+  };
+
+  /**
+   * Enum flex direction
+   * @readonly
+   * @enum {string}
+   */
+  export const directionFlexMap = {
+    ROW: "row",
+    COLUMN: "column"
+  };

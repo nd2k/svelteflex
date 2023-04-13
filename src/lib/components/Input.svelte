@@ -6,10 +6,6 @@
     export let label = "";
     export let borderRadius = "0";
 
-    const style = `
-        border-radius: ${borderRadius};
-    `;
-
     /**
      * Allow a two ways binding on type for input
      * @param {HTMLInputElement} node
@@ -20,15 +16,17 @@
 </script>
 
 <div class="input">
-    <input {style} class="field-input" use:typeAction bind:value placeholder={label} />
+    <input 
+        class="field-input" 
+        style:cursor="pointer"
+        style:border-radius={borderRadius}
+        use:typeAction 
+        bind:value placeholder={label} />
 </div>
 
 <style>
     .field-input {
         padding: 0 1rem;
         height: 1.5rem;
-    }
-    input[type="color"] {
-        cursor: pointer;
     }
 </style>

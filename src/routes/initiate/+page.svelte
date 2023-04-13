@@ -4,30 +4,37 @@
     import Button from "$lib/components/Button.svelte";
     import Icon from "$lib/components/Icon.svelte";
     import { plus } from "$lib/assets/icons/icons";
-	import { Color } from "$lib/interface";
+	import { Color, alignFlexMap, directionFlexMap, justifyFlexMap } from "$lib/interface";
     import { theme } from "$lib/store/store";
+	import Flex from "$lib/components/Flex.svelte";
 
     let colorLabel = "";
     let colorValue = "";
 
     function addColor() {
         let color = new Color(colorLabel, colorValue);
-        
+        console.log(color);
     }
 
 </script>
-<div class="initiate-page">
+<Flex 
+    class="full-width"
+    direction={directionFlexMap.COLUMN}
+    justify={justifyFlexMap.CENTER}
+    align={alignFlexMap.STRETCH}>
     <h2>Initiate your SvelteKit Project</h2>
     <Accordeon
         title="Choose your colors to add to your theme's project">
         Add colors to your theme:
-        <div class="flex">
-            <Input label="Color label" borderRadius="1rem" bind:value={colorLabel} />
+        <Flex
+            justify={justifyFlexMap.EVENLY}>
+            <Input label="Color Label" borderRadius="1rem" bind:value={colorLabel} />
+            <Input label="Theme Label" borderRadius="1rem" bind:value={colorLabel} />
             <Input type="color" borderRadius="1rem" bind:value={colorValue} />
-            <Button size="2" borderRadius="50%" onClick={addColor}>
+            <Button size="2" borderRadius="50%" onClick={addColor} isRound={true}>
                 <Icon icon={plus} />
             </Button>
-        </div>
+        </Flex>
         <!-- <div class="result">
             {#if theme.selectedColors.length > 0}
                 Your selected colors: 
@@ -41,24 +48,10 @@
         title="Choose your font">
 
     </Accordeon>
-</div>
+</Flex>
 
 <style>
-    .initiate-page {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        padding: 1rem;
-        color: var(--font-light-color);
-    }
     h2 {
         color: var(--secondary-color);
-    }
-    .flex {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        gap: 1rem;
-        padding: 1rem;
     }
 </style>

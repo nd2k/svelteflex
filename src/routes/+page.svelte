@@ -1,8 +1,10 @@
 <script>
+    import Flex from "$lib/components/Flex.svelte";
     import Button from "$lib/components/Button.svelte";
 	import Input from "$lib/components/Input.svelte";
     import { theme } from "$lib/store/store";
     import { goto } from "$app/navigation";
+	import { alignFlexMap, justifyFlexMap } from "$lib/interface";
     let projects = [];
 
     function createProject() {
@@ -11,7 +13,7 @@
 
 </script>
 
-<div class="home-page">
+<Flex class="full-width">
     <div class="starting-hero">
         {#if projects.length === 0}
         <p>No existing project. Please start the creation of one project by clicking on
@@ -24,17 +26,10 @@
             <h1>Existing projects:</h1>
         {/if}
     </div>
-</div>
+</Flex>
 
 <style>
-    .home-page {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
+    
     .starting-hero {
         margin: 1rem auto;
         width: 75%;
